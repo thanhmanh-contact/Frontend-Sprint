@@ -4,6 +4,7 @@ import { Calendar, ChevronDown } from "lucide-react";
 interface Patient {
   hoTen: number;
   ngayKham: string;
+  namSinh: number
   loaiPhongKham: string;
   loaiBenh: string;
   trieuChung: string;
@@ -15,6 +16,7 @@ export default function App() {
       id: 1,
       hoTen: "",
       ngayKham: "",
+      namSinh: 2006,
       loaiPhongKham: "",
       loaiBenh: "",
       trieuChung: "",
@@ -26,6 +28,7 @@ export default function App() {
       id: Date.now(),
       hoTen: "",
       ngayKham: "",
+      namSinh: 2006,
       loaiPhongKham: "",
       loaiBenh: "",
       trieuChung: "",
@@ -237,20 +240,31 @@ export default function App() {
                 <label className="flex-1 text-lg text-red-500">
                   từ
                 </label>
-        
-                <input
-                  type="text"
-                  className="w-1/2 placeholder:text-sm px-2 py-1 border border-gray-300 rounded-md"
-                />
+                
+                
+                  <div className="relative w-1/2">
+                    <input
+                      type="text"
+                      className="w-full placeholder:text-sm px-2 py-1 pr-10 border border-gray-300 rounded-md"
+                    />
+              
+                    <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                  </div>
+                  
+                
         
                 <label className="flex-1 text-lg text-red-500">
                   đến
                 </label>
         
-                <input
-                  type="text"
-                  className="w-1/2 placeholder:text-sm px-2 py-1 border border-gray-300 rounded-md"
-                />
+                 <div className="relative w-1/2">
+                  <input
+                    type="text"
+                    className="w-full placeholder:text-sm px-2 py-1 pr-10 border border-gray-300 rounded-md"
+                  />
+            
+                  <Calendar className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                </div>
         
               </div>
     
@@ -318,7 +332,7 @@ export default function App() {
 
           <div className="flex items-center w-full gap-2">
         
-              <label className="whitespace-nowrap text-lg text-gray-700">
+              {/* <label className="whitespace-nowrap text-lg text-gray-700">
                 Số lượng thuốc tồn
               </label>
         
@@ -342,7 +356,7 @@ export default function App() {
                   className="w-1/2 placeholder:text-sm px-2 py-1 border border-gray-300 rounded-md"
                 />
         
-              </div>
+              </div> */}
 
             </div>
 
@@ -360,10 +374,13 @@ export default function App() {
                         STT
                       </th>
                       <th className="px-4 py-3 text-left text-sm text-gray-700 border-r border-gray-300">
-                        Họ tên bệnh nhân
+                        Họ tên
                       </th>
                       <th className="px-4 py-3 text-left text-sm text-gray-700 border-r border-gray-300">
                         Ngày khám
+                      </th>
+                      <th className="px-4 py-3 text-left text-sm text-gray-700 border-r border-gray-300">
+                        Năm sinh
                       </th>
                       <th className="px-4 py-3 text-left text-sm text-gray-700 border-r border-gray-300">
                         Loại phòng khám
@@ -429,7 +446,7 @@ export default function App() {
                             {/* <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" /> */}
                           </div>
                         </td>
-                        <td className="p-2">
+                        <td className="p-2 border-r border-gray-200">
                           <div className="relative">
                             <input
                               type="text"
@@ -440,6 +457,18 @@ export default function App() {
                             {/* <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" /> */}
                           </div>
                         </td>
+                        <td className="p-2 border-r border-gray-200">
+                          <div className="relative">
+                            <input
+                              type="text"
+                              disabled
+                              className="w-full bg-gray-100 px-2 py-1 border border-gray-300 rounded-md cursor-not-allowed"
+                            />
+                      
+                            {/* <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" /> */}
+                          </div>
+                        </td>
+                        
                       </tr>
                     ))}
                   </tbody>
