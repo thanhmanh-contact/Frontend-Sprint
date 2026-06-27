@@ -219,7 +219,7 @@ export default function App() {
                     onClick={addPatient}
                     className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-md text-sm font-medium shadow-sm transition-colors"
                   >
-                    Lập báo cáo doanh số
+                    Lập báo cáo
                   </button>
               
                   <button
